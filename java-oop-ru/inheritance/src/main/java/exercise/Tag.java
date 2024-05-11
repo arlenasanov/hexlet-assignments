@@ -15,7 +15,7 @@ public class Tag {
     }
 
     public final Map<String, String> getAttributes() {
-        return Map.copyOf(attributes);
+        return attributes;
     }
 
     public final String getTagName() {
@@ -28,8 +28,7 @@ public class Tag {
         for (var elem : getAttributes().entrySet()) {
             sb.append(String.format("%s=\"%s\" ", elem.getKey(), elem.getValue()));
         }
-        String str = sb.substring(0, sb.length() - 1);
-        return str + '>';
+        return sb.substring(0, sb.length() - 1) + '>';
     }
 }
 // END
